@@ -9,7 +9,7 @@
     * a是主世界光照分量被允许达到的最大值, 不可逾越
     * 粉黛·正色 通过 lyt=mix(lyt, vec3(1.0), addLyt) 等手段, 限制主世界光照分量不超过1.4
     * 将x∈[1,a)光滑地单一映射到return∈[1,rgbMaxInv), 1处导数为1, a处导数为0, 是凸函数
-    * 当且仅当rgbMaxInv超过a时候使用
+    * 当且仅当a超过rgbMaxInv时候使用
         * 如果没超过, 鉴于rgbMaxInv的数学性质, 直接textureColor*=lytColor也不会损害色调和饱和度
         * 如果没超过, antiOverLyt实际上将光照效果提亮, 这不是合理行为
     * antiOverLyt是纯多项式, 次数为3 */
